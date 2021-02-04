@@ -1,29 +1,36 @@
 import React from "react"
+import {TransitionGroup, CSSTransition} from "react-transition-group";
 
 export const Notes = ({notes, onRemove}) => {
     return (
-        <ul className="list-group">
+        <TransitionGroup component='ul' className="list-group">
             {notes.map(note => (
-                <li
-                    className="list-group-item note"
-                    key={note.id}
+                <CSSTransition
+                  key={note.id}
+                  classNames={'note'}
+                  timeout={800}
                 >
-                    <div>
-                        <strong>{note.title}</strong>
-
-                        <small>{note.date}</small>
-                    </div>
-
-
-                    <button
-                        type="button"
-                        className="btn btn-outline-danger btn-sm"
-                        onClick={() => onRemove(note.id)}
+                    <li
+                        className="list-group-item note"
+                        key={note.id}
                     >
-                        &times;
-                    </button>
-                </li>
+                        <div>
+                            <strong>{note.title}</strong>
+
+                            <small>{note.date}</small>
+                        </div>
+
+
+                        <button
+                            type="button"
+                            className="btn btn-outline-danger btn-sm"
+                            onClick={() => onRemove(note.id)}
+                        >
+                            &times;
+                        </button>
+                    </li>
+                </CSSTransition>
             ))}
-        </ul>
+        </TransitionGroup>
     )
 }

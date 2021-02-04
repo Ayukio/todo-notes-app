@@ -1,5 +1,5 @@
 import React, {useContext, useState} from "react"
-import {AlertContext} from "../context/alert/alert-context";
+import {AlertContext} from "../context/alert/alertContext";
 import {FirebaseContext} from "../context/firebase/firebaseContext";
 
 export const Form = () => {
