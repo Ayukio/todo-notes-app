@@ -11,17 +11,17 @@ function App() {
     return (
         <FirebaseState>
             <AlertState>
-            <BrowserRouter>
-                <Navbar/>
-                <div className="container pt-4">
-                    <Alert/>
-                    <Switch>
-                        <Route path={'/'} exact component={Home}/>
-                        <Route path={'/about'} component={About}/>
-                    </Switch>
-                </div>
-            </BrowserRouter>
-        </AlertState>
+                <BrowserRouter>
+                    <Navbar/>
+                    <div className="container pt-4">
+                        <Alert/>
+                        <Switch>
+                            <Route path={'/'} exact component={Home}/>
+                            <Route path={'/about'} component={About}/>
+                        </Switch>
+                    </div>
+                </BrowserRouter>
+            </AlertState>
         </FirebaseState>
 
 
